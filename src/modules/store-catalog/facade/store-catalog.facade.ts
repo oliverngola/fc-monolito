@@ -12,8 +12,8 @@ export interface UseCaseProps {
 }
 
 export default class StoreCatalogFacade implements StoreCatalogFacadeInterface {
-  private readonly _findUseCase: any
-  private readonly _findAllUseCase: any
+  private readonly _findUseCase: UseCaseInterface
+  private readonly _findAllUseCase: UseCaseInterface
 
   constructor (useCaseProps: UseCaseProps) {
     this._findUseCase = useCaseProps.find
@@ -21,10 +21,10 @@ export default class StoreCatalogFacade implements StoreCatalogFacadeInterface {
   }
 
   async find (input: FindStoreCatalogFacadeInputDto): Promise<FindStoreCatalogFacadeOutputDto> {
-    return this._findUseCase.execute(input)
+    return await this._findUseCase.execute(input)
   }
 
   async findAll (input: FindAllStoreCatalogFacadeInputDto): Promise<FindAllStoreCatalogFacadeOutputDto> {
-    return this._findAllUseCase.execute(input)
+    return await this._findAllUseCase.execute(input)
   }
 }
