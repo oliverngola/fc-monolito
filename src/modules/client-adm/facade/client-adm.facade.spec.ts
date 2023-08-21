@@ -33,14 +33,25 @@ describe('ClientAdmFacade test', () => {
       id: '1',
       name: 'John Doe',
       email: 'x@x.com',
-      address: 'Address 1'
+      document: 'Document 1',
+      street: 'Street',
+      number: '123',
+      complement: 'Cazenga',
+      city: 'Luanda',
+      state: 'Luanda',
+      zipCode: 'string'
     }
     await facade.add(input)
     const client = await ClientModel.findOne({ where: { id: '1' } })
     expect(client).toBeDefined()
     expect(client.name).toBe(input.name)
     expect(client.email).toBe(input.email)
-    expect(client.address).toBe(input.address)
+    expect(client.street).toBe(input.street)
+    expect(client.number).toBe(input.number)
+    expect(client.complement).toBe(input.complement)
+    expect(client.city).toBe(input.city)
+    expect(client.state).toBe(input.state)
+    expect(client.zipCode).toBe(input.zipCode)
   })
 
   it('should find a client', async () => {
@@ -49,7 +60,13 @@ describe('ClientAdmFacade test', () => {
       id: '1',
       name: 'John Doe',
       email: 'x@x.com',
-      address: 'Address 1'
+      document: 'Document 1',
+      street: 'Street',
+      number: '123',
+      complement: 'Cazenga',
+      city: 'Luanda',
+      state: 'Luanda',
+      zipCode: 'string'
     }
     await facade.add(input)
     const client = await facade.find({ id: '1' })
@@ -57,6 +74,11 @@ describe('ClientAdmFacade test', () => {
     expect(client.id).toBe(input.id)
     expect(client.name).toBe(input.name)
     expect(client.email).toBe(input.email)
-    expect(client.address).toBe(input.address)
+    expect(client.street).toBe(input.street)
+    expect(client.number).toBe(input.number)
+    expect(client.complement).toBe(input.complement)
+    expect(client.city).toBe(input.city)
+    expect(client.state).toBe(input.state)
+    expect(client.zipCode).toBe(input.zipCode)
   })
 })

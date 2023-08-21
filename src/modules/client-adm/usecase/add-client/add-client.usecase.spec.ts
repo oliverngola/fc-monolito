@@ -14,7 +14,13 @@ describe('Add Client usecase unit test', () => {
     const input = {
       name: 'John Doe',
       email: 'x@x.com',
-      address: 'Address 1'
+      document: 'Document 1',
+      street: 'Street',
+      number: '123',
+      complement: 'Cazenga',
+      city: 'Luanda',
+      state: 'Luanda',
+      zipCode: 'string'
     }
     const output = await usecase.execute(input)
     expect(clientRepository.add).toHaveBeenCalled()
@@ -22,7 +28,15 @@ describe('Add Client usecase unit test', () => {
       id: expect.any(String),
       name: input.name,
       email: input.email,
-      address: input.address,
+      document: input.document,
+      address: {
+        street: input.street,
+        number: input.number,
+        complement: input.complement,
+        city: input.city,
+        state: input.state,
+        zipCode: input.zipCode
+      },
       createdAt: expect.any(Date),
       updatedAt: expect.any(Date)
     })

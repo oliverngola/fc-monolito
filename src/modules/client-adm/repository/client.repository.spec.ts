@@ -3,6 +3,7 @@ import Id from '../../@shared/domain/value-object/id.value-object'
 import ClientRepository from './client.repository'
 import Client from '../domain/entity/client.entity'
 import ClientModel from './client.model'
+import Address from '../../@shared/domain/value-object/address.value-object'
 
 describe('Client Repository', () => {
   let sequelize: Sequelize
@@ -26,7 +27,15 @@ describe('Client Repository', () => {
       id: new Id('1'),
       name: 'Client 1',
       email: 'x@x.com',
-      address: 'Address 1'
+      document: 'Document',
+      address: new Address({
+        street: 'Street',
+        number: '123',
+        complement: 'C1',
+        city: 'City',
+        state: 'State',
+        zipCode: 'Zip'
+      })
     })
     const repository = new ClientRepository()
     await repository.add(client)
@@ -35,7 +44,13 @@ describe('Client Repository', () => {
     expect(clientDb.id).toBe(client.id.id)
     expect(clientDb.name).toBe(client.name)
     expect(clientDb.email).toBe(client.email)
-    expect(clientDb.address).toBe(client.address)
+    expect(clientDb.document).toBe(client.document)
+    expect(clientDb.street).toBe(client.address.street)
+    expect(clientDb.number).toBe(client.address.number)
+    expect(clientDb.complement).toBe(client.address.complement)
+    expect(clientDb.city).toBe(client.address.city)
+    expect(clientDb.state).toBe(client.address.state)
+    expect(clientDb.zipCode).toBe(client.address.zipCode)
     expect(clientDb.createdAt).toStrictEqual(client.createdAt)
     expect(clientDb.updatedAt).toStrictEqual(client.updatedAt)
   })
@@ -45,7 +60,13 @@ describe('Client Repository', () => {
       id: '1',
       name: 'John Doe',
       email: 'x@x.com',
-      address: 'Address 1',
+      document: 'Documet',
+      street: 'Street',
+      number: '123',
+      complement: 'Cazenga',
+      city: 'Luanda',
+      state: 'Luanda',
+      zipCode: 'string',
       createdAt: new Date(),
       updatedAt: new Date()
     })
@@ -54,7 +75,12 @@ describe('Client Repository', () => {
     expect(output.id.id).toEqual(client.id)
     expect(output.name).toEqual(client.name)
     expect(output.email).toEqual(client.email)
-    expect(output.address).toEqual(client.address)
+    expect(output.address.street).toEqual(client.street)
+    expect(output.address.number).toEqual(client.number)
+    expect(output.address.complement).toEqual(client.complement)
+    expect(output.address.city).toEqual(client.city)
+    expect(output.address.state).toEqual(client.state)
+    expect(output.address.zipCode).toEqual(client.zipCode)
     expect(output.createdAt).toStrictEqual(client.createdAt)
     expect(output.updatedAt).toStrictEqual(client.updatedAt)
   })
