@@ -12,7 +12,6 @@ export default class ClientAdmFacadeFactory {
       addUsecase,
       findUsecase
     })
-
     return facade
   }
 }

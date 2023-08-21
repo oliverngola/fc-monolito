@@ -3,8 +3,8 @@ import InvoiceModel from './invoice.model'
 import InvoiceItemModel from './invoice-item.model'
 import InvoiceRepository from './invoice.repository'
 import Id from '../../@shared/domain/value-object/id.value-object'
-import Invoice from '../domain/invoice.entity'
-import InvoiceItems from '../domain/invoice-items.entity'
+import Invoice from '../domain/entity/invoice.entity'
+import InvoiceItems from '../domain/entity/invoice-items.entity'
 import Address from '../../@shared/domain/value-object/address.value-object'
 
 describe('Invoice Repository', () => {

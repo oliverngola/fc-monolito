@@ -1,9 +1,9 @@
 import { Sequelize } from 'sequelize-typescript'
 import InvoiceModel from '../repository/invoice.model'
 import InvoiceItemModel from '../repository/invoice-item.model'
-import InvoiceFacadeFactory from '../factory/facade.factory'
+import InvoiceFacadeFactory from '../factory/invoice.facade.factory'
 
-describe('ClientAdmFacade test', () => {
+describe('InvoiceFacade test', () => {
   let sequelize: Sequelize
 
   beforeEach(async () => {

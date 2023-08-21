@@ -1,5 +1,5 @@
-import Invoice from '../../domain/invoice.entity'
-import InvoiceItems from '../../domain/invoice-items.entity'
+import Invoice from '../../domain/entity/invoice.entity'
+import InvoiceItems from '../../domain/entity/invoice-items.entity'
 import Id from '../../../@shared/domain/value-object/id.value-object'
 import Address from '../../../@shared/domain/value-object/address.value-object'
 import FindInvoiceUseCase from './find-invoice.usecase'

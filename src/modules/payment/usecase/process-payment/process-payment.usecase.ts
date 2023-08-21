@@ -1,5 +1,5 @@
 import UseCaseInterface from '../../../@shared/usecase/use-case.interface'
-import Transaction from '../../domain/transaction.entity'
+import Transaction from '../../domain/entity/transaction.entity'
 import PaymentGateway from '../../gateway/payment.gateway'
 import { ProcessPaymentInputDto, ProcessPaymentOutputDto } from './process-payment.dto'
 

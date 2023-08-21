@@ -1,5 +1,5 @@
 import UseCaseInterface from '../../@shared/usecase/use-case.interface'
-import PaymentFacadeInterface, { PaymentFacadeInputDto, PaymentFacadeOutputDto } from './payment.interface'
+import PaymentFacadeInterface, { PaymentFacadeInputDto, PaymentFacadeOutputDto } from './payment.facade.interface'
 
 type UseCaseProps = {
   processUseCase: UseCaseInterface

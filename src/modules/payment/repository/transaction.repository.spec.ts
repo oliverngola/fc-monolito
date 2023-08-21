@@ -1,6 +1,6 @@
 import { Sequelize } from 'sequelize-typescript'
 import TransactionModel from './transaction.model'
-import Transaction from '../domain/transaction.entity'
+import Transaction from '../domain/entity/transaction.entity'
 import TransactionRepository from './transaction.repository'
 
 describe('Transaction Repository', () => {
