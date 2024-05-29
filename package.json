@@ -16,7 +16,8 @@
     "lint:fix": "npm run lint -- --fix",
     "tsc": "tsc",
     "test": "npm run tsc -- --noEmit && jest",
-    "test:ci": "npm test -- --coverage"
+    "test:ci": "npm test -- --coverage",
+    "dev": "nodemon src/main/server.ts"
   },
   "dependencies": {
     "dotenv": "^16.3.1",
